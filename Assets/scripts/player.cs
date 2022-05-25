@@ -38,6 +38,11 @@ public class player : MonoBehaviour
     movement = transform.localRotation * movement;
     transform.localPosition += movement*Time.deltaTime * Speed;
     
+    if(Input.GetButtonDown("LeftShift"))
+        {
+        Speed = Speed*8;
+        Debug.Log("pai");
+        }
     }
 
     void Jump()
