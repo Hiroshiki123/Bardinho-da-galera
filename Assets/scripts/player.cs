@@ -38,13 +38,19 @@ public class player : MonoBehaviour
     movement = transform.localRotation * movement;
     transform.localPosition += movement*Time.deltaTime * Speed;
     
-    if(Input.GetButtonDown("LeftShift"))
+    }
+     private void FixedUpdate()
+    {
+       
+
+        if (Input.GetKey(KeyCode.LeftShift)) {
+            Speed = 10;
+        }
+        else
         {
-        Speed = Speed*8;
-        Debug.Log("pai");
+            Speed = 5;
         }
     }
-
     void Jump()
     {
         if(Input.GetButtonDown("Jump"))
@@ -52,13 +58,14 @@ public class player : MonoBehaviour
             if(!isJumping)
             {
                 rig.AddForce(new Vector3(0f,JumpForce,0f),ForceMode.Impulse);
-                doubleJump = true;
+                doubleJump = false;
             }
             else
             {
-                if(doubleJump)
+                if(!doubleJump)
                 {
-                rig.AddForce(new Vector3(0f,dJumpForce,0f), ForceMode.Impulse);                   
+                rig.AddForce(new Vector3(0f,dJumpForce,0f), ForceMode.Impulse);  
+                doubleJump = true;                 
                 }
             }
             
