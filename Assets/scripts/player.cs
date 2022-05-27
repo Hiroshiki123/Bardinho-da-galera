@@ -44,7 +44,7 @@ public class player : MonoBehaviour
        
 
         if (Input.GetKey(KeyCode.LeftShift)) {
-            Speed = 10;
+            Speed = 20;
         }
         else
         {
