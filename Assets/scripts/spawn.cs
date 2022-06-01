@@ -8,7 +8,7 @@ public class spawn : MonoBehaviour
     private GameObject Cubo;
     float QuantidadeInimigos;
 
-    public GameObject objectToSpawn;
+  [SerializeField] public GameObject objectToSpawn;
 
     private void Start()
     {
@@ -30,10 +30,10 @@ public class spawn : MonoBehaviour
 
             if (QuantidadeInimigos == 0 )
             {
-
+                
                 Instantiate(objectToSpawn);
                 QuantidadeInimigos = QuantidadeInimigos + 1;
-
+                
             }
 
             if (QuantidadeInimigos == 2)
